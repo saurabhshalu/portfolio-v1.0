@@ -212,7 +212,7 @@ visibility: hidden;
 
 
 main {
-    .home, .introduction, .skills, .portfolio, .contact {
+    .home, .introduction, .skills, .portfolio {
         min-height: $other_height;
         width: 100%;
         display: flex;
@@ -302,19 +302,159 @@ main {
     }
 
     .skills {
-        background: peru;
+        background: linear-gradient(to right, #00cdac 0%, #8ddad5 100%);
+
+        .skill-title {
+            padding-top:20px;
+            height: 100px;
+            font-size: 25px;
+            color: white;
+        }
+
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .item {
+            height: 200px;
+            width: 200px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            border-radius: 50%;
+        }
+
+        img {
+            max-height: 130px;
+            max-width: 130px;
+        }
+    }
+
+    #skill1 {
+        display: none;
+    }
+
+    #skill2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-height: $other_height;
+            max-width: 100vw;
+            padding: 10px;
+            height: 90%;
+            width: 90%;
+            justify-content: center;
+        }
     }
 
     .portfolio {
-        background: hotpink;
+        background: linear-gradient(to right, #F6D365 0%, rgb(243, 212, 111) 100%);
+        .title {
+            padding: 20px;
+            font-size: 45px;
+            cursor: pointer;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: 100%;
+        }
+        .column {
+            max-width: 700px;
+            max-height: 500px;
+            min-height: 200px;
+            min-width: 200px;
+            margin: 5px;
+            background: #395B50;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            width: 500px;
+            height: 300px;
+            max-height: 300px;
+            background: transparent;
+            margin: 10px;
+            perspective: 1000px;
+            cursor: default;
+        }
+        .card img {
+            height: 100%;
+            width: 100%;
+            padding: 5px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+        }
+        .card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+        .flip-card-front {
+            background: #bbb;
+            color: black;
+        }
+        .flip-card-back {
+            background: #f8f8f9;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+            transform: rotateY(180deg);
+        }
+        .flip-card-back p {
+            color: #5f5f79;
+            font-weight: 600;
+        }
+        .flip-card-back h1 {
+            padding-top: 5px;
+        }
     }
     .contact {
-        background: seagreen;
+
+        height: 300px;
+        background: #F8F8F9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .h1 {
+            font-size: 45px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 30px;
+        }
+
+        img {
+            height: 60px;
+            margin: 10px;
+        }
     }
 }
 
 
 
-span .goto { position:absolute; top:-$header_height;}
-
-
+.goto {position:absolute; top:-$header_height;}
