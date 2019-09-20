@@ -18,6 +18,19 @@ button {
   font-family: 'Segoe UI', sans-serif;
 }
 
+h3 {
+  font-size: 40px;
+  font-weight: normal;
+  color: #404040;
+  padding-top: 20px;
+}
+
+.round-image {
+  border: black 5px solid;
+  border-radius: 50%;
+  margin: 5px;
+}
+
 header {
   position: fixed;
   top: 0px;
@@ -25,7 +38,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 80px;
+  height: 78px;
   background: #F8F8F9;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -210,18 +223,127 @@ nav ul li:not(:first-child) {
 }
 
 main .home, main .introduction, main .skills, main .portfolio, main .contact {
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
 }
 
 main .home {
-  margin-top: 80px;
-  background: yellow;
+  margin-top: 78px;
+  background: -webkit-gradient(linear, left top, right top, from(#00cdac), to(#8ddad5));
+  background: linear-gradient(to right, #00cdac 0%, #8ddad5 100%);
+}
+
+main .home .title {
+  min-height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .home .title h1 {
+  font-size: 72px;
+}
+
+main .home .welcomeImage {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .home .footer {
+  min-height: 150px;
+}
+
+main .home .title, main .home .footer {
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main .introduction {
-  background: cyan;
+  background: -webkit-gradient(linear, left top, right top, from(#F6D365), to(#f3d46f));
+  background: linear-gradient(to right, #F6D365 0%, #f3d46f 100%);
+}
+
+main .introduction .row1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .introduction .row1 .intro, main .introduction .row1 .hi-img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .introduction .row1 .intro {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 5%;
+  text-align: left;
+}
+
+main .introduction .row1 .intro h1 {
+  font-size: 130px;
+}
+
+main .introduction .row1 .intro h2 {
+  font-size: 90px;
+}
+
+main .introduction .row1 .hi-img {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .introduction .row2 {
+  min-height: 150px;
+}
+
+main .introduction .row2 h1 {
+  font-size: 35px;
+  padding-bottom: 15px;
+  font-weight: 400;
+  color: #404040;
 }
 
 main .skills {
@@ -236,8 +358,8 @@ main .contact {
   background: seagreen;
 }
 
-span {
+span .goto {
   position: absolute;
-  top: -80px;
+  top: -78px;
 }
 /*# sourceMappingURL=style.css.map */
