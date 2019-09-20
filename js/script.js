@@ -55,3 +55,7 @@ window.onload = function() {
     document.body.appendChild(css);
 
 };
+
+function hideNav() {
+    document.getElementById('nav').checked=false;
+}

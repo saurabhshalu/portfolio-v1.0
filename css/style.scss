@@ -11,6 +11,8 @@ html {
     scroll-behavior: smooth;
 }
 
+.goto {position:absolute; top:-$header_height;}
+
 body {
     font-family: 'Segoe UI', sans-serif;
     text-align: center;
@@ -457,4 +459,103 @@ main {
 
 
 
-.goto {position:absolute; top:-$header_height;}
+
+
+
+.social img:hover, .round-image:hover, .item:hover {
+    animation: bounce 1s;
+}
+
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+   }
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+   }
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+   }
+}
+
+
+@media screen and (max-width: 900px) {
+  .row1 {
+    display: flex;
+    flex-direction: column;
+    transition: opacity 3s ease-in-out;
+  }
+  .row2 , .row1 img {
+    margin-top: 20px;
+  }
+  .row2 h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .skills {
+        #skill1 {
+            display: flex;
+            flex-direction: column;
+        }
+        #skill2 {
+            display: none;
+        }
+    }
+  
+  
+  
+  .home {
+      .title {
+          h1 {
+              font-size: 50px !important;
+          }
+      }
+  }
+  .home .title h3 {
+      font-size: 30px !important;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  
+  .home .title h1 {
+      font-size: 40px !important;
+  }
+  .home .title h3 {
+      font-size: 30px !important;
+  }
+  .welcomeImage img, .hi-img img {
+    width: 80%;
+  }
+  .intro h2 {
+    font-size: 21.5vw !important;
+  }
+  .row2 h1 {
+    font-size: 25px !important;
+  }
+
+  .contact {
+    height: 250px;
+  }
+  .contact .h1 {
+    font-size: 35px !important;
+    font-weight: 600;
+  }
+  .contact p {
+      font-size: 20px !important;
+  }
+  .social img {
+      height: 50px !important;
+      margin: 5px;
+  }
+}
