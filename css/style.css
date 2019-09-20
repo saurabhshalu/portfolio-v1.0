@@ -25,8 +25,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 70px;
-  height: 8vh;
+  height: 85px;
   background: #08a3b8;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -55,12 +54,13 @@ nav ul li {
 }
 
 main .home, main .introduction, main .skills, main .portfolio, main .contact {
-  height: 92vh;
+  height: calc(100vh - 70px);
   width: 100%;
+  position: relative;
 }
 
 main .home {
-  margin-top: 8vh;
+  margin-top: 85px;
   background: yellow;
 }
 
@@ -78,5 +78,10 @@ main .portfolio {
 
 main .contact {
   background: seagreen;
+}
+
+span {
+  position: absolute;
+  top: -85px;
 }
 /*# sourceMappingURL=style.css.map */

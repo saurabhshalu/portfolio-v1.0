@@ -1,6 +1,5 @@
-$header_height : 8vh;
-$other_height : 92vh;
-
+$header_height : 85px;
+$other_height : calc(100vh - 70px);
 
 * {
     margin: 0px;
@@ -25,8 +24,7 @@ header {
     top: 0px;
     width: 100%;
     display: flex;
-    min-height: 70px;
-    height: 8vh;
+    height: $header_height;
     background:  rgb(8, 163, 184);
     align-items: center;
     z-index: 5;
@@ -40,22 +38,19 @@ header {
 nav {
     padding: 30px;
     width: 100%;
-
     ul {
         float: right;
         li {
             display: inline-block;
         }
-    }
-    
+    } 
 }
-
-
 
 main {
     .home, .introduction, .skills, .portfolio, .contact {
         height: $other_height;
         width: 100%;
+        position: relative;
     }
 
     .home { 
@@ -78,3 +73,5 @@ main {
         background: seagreen;
     }
 }
+
+span{ position:absolute; top:-$header_height;}
