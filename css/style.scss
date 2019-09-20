@@ -1,4 +1,4 @@
-$header_height : 85px;
+$header_height : 80px;
 $other_height : calc(100vh - 70px);
 
 * {
@@ -25,7 +25,7 @@ header {
     width: 100%;
     display: flex;
     height: $header_height;
-    background:  rgb(8, 163, 184);
+    background: #F8F8F9;
     align-items: center;
     z-index: 5;
 
@@ -42,9 +42,161 @@ nav {
         float: right;
         li {
             display: inline-block;
+            a {
+                display: inline-block;
+                outline: none;
+                color: #5f5f79;
+                margin-left: 30px;
+                font-size: 22px;
+                text-decoration: none;
+                font-weight: bold;
+                letter-spacing: 0.04em;
+            }
+            a:hover {
+                color: #808080;
+                text-decoration: none;
+            }
+        }
+        li:not(:first-child) {
+            margin-left: 25px;
         }
     } 
 }
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100vw;
+        z-index: -1;
+        background: #1f2227;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+
+        ul {
+            position: absolute;
+            top: 25%;
+            transform: translateY(-50%);
+            width: 100%;
+
+            li {
+                display: block;
+                float: none;
+                width: 100%;
+                text-align: right;
+                margin-bottom: 10px;
+
+                a {
+                    padding: 10px 25px;
+                    opacity: 0;
+                    visibility: hidden;
+                    color: #fff;
+                    font-size: 24px;
+                    font-weight: 600;
+                    transform: translateY(-20px);
+                    transition: all 0.2s ease;
+                }
+            }
+
+            li:nth-child(1) a {
+                transition-delay: 0.2s;
+            }
+
+            li:nth-child(2) a {
+                transition-delay: 0.3s;
+            }
+
+            li:nth-child(3) a {
+                transition-delay: 0.4s;
+            }
+
+            li:nth-child(4) a {
+                transition-delay: 0.5s;
+            }
+
+            li:not(:first-child) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .nav-open {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        display: block;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        z-index: 9999;
+        border-radius: 50%;
+
+        i {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #1f2227;
+            border-radius: 2px;
+            margin-left: 14px;
+        }
+
+        i:nth-child(1) {
+            margin-top: 16px;
+        }
+
+        i:nth-child(2) {
+            margin-top: 4px;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        i:nth-child(3) {
+            margin-top: 4px;
+        }
+    }
+}
+
+#nav:checked + .nav-open {
+    transform: rotate(45deg);
+}
+
+#nav:checked + .nav-open i {
+    background: #fff;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-open i:nth-child(1) {
+transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-open i:nth-child(2) {
+opacity: 0;
+visibility: hidden;
+}
+
+#nav:checked + .nav-open i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-container {
+    z-index: 9990;
+    opacity: 1;
+    visibility: visible;
+} 
+
+#nav:checked ~ .nav-container ul li a {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
 
 main {
     .home, .introduction, .skills, .portfolio, .contact {
@@ -75,3 +227,6 @@ main {
 }
 
 span{ position:absolute; top:-$header_height;}
+
+
+
