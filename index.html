@@ -4,9 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Saurabh Verma</title>
 </head>
 <body>
-    <h1>Welcome!</h1>
+    <header>
+        <div class="logo">
+            <img src="./assets/logo.svg" alt="logo">
+         </div>
+         <nav>
+            <input type="checkbox" id="nav" class="hidden"/>
+            <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+
+            <div class="nav-container">
+                <ul>
+                <li><a onclick="gotToDiv('#home');" href="#">Home</a></li>
+                <li><a onclick="goToDiv('#skills');" href="#">Skills</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact Me</a></li>
+                </ul>
+            </div>
+         </nav>
+    </header>
+    <main>
+        <div id="home" class="home">
+            Home
+        </div>
+        <div id="introduction" class="introduction">
+            Introduction
+        </div>
+        <div id="skills" class="skills">
+            Skills
+        </div>
+        <div id="portfolio" class="portfolio">
+            portfolio
+        </div>
+        <div id="contact" class="contact">
+            contact
+        </div>
+    </main>
+    <script src="./js/script.js"></script>
 </body>
 </html>

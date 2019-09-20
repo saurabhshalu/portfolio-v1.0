@@ -1,0 +1,80 @@
+$header_height : 8vh;
+$other_height : 92vh;
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+button {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    min-height: 70px;
+    height: 8vh;
+    background:  rgb(8, 163, 184);
+    align-items: center;
+    z-index: 5;
+
+    .logo {
+        display: flex;
+        margin-left: 2%;
+    }
+}
+
+nav {
+    padding: 30px;
+    width: 100%;
+
+    ul {
+        float: right;
+        li {
+            display: inline-block;
+        }
+    }
+    
+}
+
+
+
+main {
+    .home, .introduction, .skills, .portfolio, .contact {
+        height: $other_height;
+        width: 100%;
+    }
+
+    .home { 
+        margin-top: $header_height;
+        background: yellow;
+    }
+
+    .introduction {
+        background: cyan;
+    }
+
+    .skills {
+        background: peru;
+    }
+
+    .portfolio {
+        background: hotpink;
+    }
+    .contact {
+        background: seagreen;
+    }
+}
